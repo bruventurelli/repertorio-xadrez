@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Repertório Teórico | Viena &amp; Defesa Siciliana</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <a href="#conteudo-principal" class="skip-link">Ir direto para o conteúdo</a>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">♔ Meu Repertório <span>Teórico</span></a>
+            <button type="button" class="menu-toggle" id="menuToggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navMenu">☰</button>
+            <nav class="nav" id="navMenu" aria-label="Navegação principal">
+                <a href="#visao-geral">Filosofia</a>
+                <a href="#brancas">Brancas: Viena</a>
+                <a href="#pretas">Pretas: Siciliana</a>
+                <a href="#galeria">Mestres</a>
+                <a href="#explorador">Tabuleiro Interativo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo-principal">
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <span class="badge">Estudo Teórico • Repertório de <span class="chess-move">1.e4</span></span>
+                    <h1>Abertura <span>Viena</span> &amp; Defesa <span>Siciliana</span></h1>
+                    <p>Uma análise estruturada do meu repertório principal no xadrez: o jogo agressivo e direto de Brancas com o Gambito Viena e o contra-ataque assimétrico de Pretas com o Dragão Acelerado e a Najdorf.</p>
+                    <div class="hero-buttons">
+                        <a href="#explorador" class="btn btn-primary">Explorar no Tabuleiro</a>
+                        <a href="#visao-geral" class="btn btn-secondary">Entender os Lances-Chave</a>
+                    </div>
+                </div>
+
+                <figure class="hero-figure">
+                    <div class="hero-image-card zoom-container">
+                        <img src="assets/img/hero-chess.jpg" alt="Magnus Carlsen aos 13 anos enfrentando Garry Kasparov em Reykjavík, Islândia, 2004">
+                    </div>
+                    <figcaption class="hero-photo-caption">
+                        Magnus Carlsen aos 13 anos enfrentando o atual campeão do mundo Garry Kasparov em Reykjavík, Islândia, 2004.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- VISÃO GERAL COM ABAS CLICÁVEIS -->
+        <section id="visao-geral" class="section bg-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">Fundamentos — Clique em um card para aprofundar</span>
+                    <h2>Filosofia do Repertório</h2>
+                </div>
+
+                <div class="grid-2">
+                    <div class="info-box philosophy-tab active" data-side="brancas" role="button" tabindex="0" aria-pressed="true">
+                        <div class="tab-top">
+                            <h3>♔ Com as Brancas (<span class="chess-move">1.e4 e5 2.Cc3</span>)</h3>
+                            <span class="click-hint">Explorar lógica ↓</span>
+                        </div>
+                        <p>A <strong>Abertura Viena</strong> foge da teoria exaustiva da Ruy López e da Italiana, mantendo flexibilidade para atacar o centro com <span class="chess-move">f4</span> (Gambito Viena) e desenvolver peças rapidamente com iniciativa na ala do rei.</p>
+                    </div>
+
+                    <div class="info-box philosophy-tab" data-side="pretas" role="button" tabindex="0" aria-pressed="false">
+                        <div class="tab-top">
+                            <h3>♚ Com as Pretas (<span class="chess-move">1.e4 c5</span>)</h3>
+                            <span class="click-hint">Explorar lógica ↓</span>
+                        </div>
+                        <p>A <strong>Defesa Siciliana</strong> busca desequilíbrio imediato desde o primeiro lance. Contra sistemas abertos, alterno entre a pressão na diagonal longa do <strong>Dragão Acelerado</strong> e a elasticidade dinâmica da <strong>Najdorf</strong>.</p>
+                    </div>
+                </div>
+
+                <div id="philosophyDetail" class="philosophy-detail-panel" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <!-- DE BRANCAS: VIENA E GAMBITO VIENA -->
+        <section id="brancas" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">Iniciativa &amp; Ataque — Clique no card para ver a análise ou no botão para ir ao tabuleiro</span>
+                    <h2>Repertório de Brancas: Sistema Viena</h2>
+                </div>
+                <div class="cards-grid">
+                    <article class="card interactive-card white-tab active" data-white="classica" role="button" tabindex="0" aria-pressed="true">
+                        <div class="card-banner">
+                            <span class="banner-piece" aria-hidden="true">♘ ♗</span>
+                            <span class="banner-label">Desenvolvimento Flexível</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <div class="tab-top">
+                                    <h3>Abertura Viena Clássica</h3>
+                                    <button type="button" class="direct-board-btn" data-jump-opening="viena" data-jump-step="5">Ver no tabuleiro ↗</button>
+                                </div>
+                                <span class="pgn-tag">1.e4 e5 2.Cc3</span>
+                            </div>
+                            <p>Ao desenvolver o cavalo da dama antes do cavalo do rei, as Brancas controlam <span class="chess-move">d5</span>, protegem <span class="chess-move">e4</span> e mantêm aberta a passagem do peão de <span class="chess-move">f</span>. É uma estrutura sólida que permite transições posicionais ou táticas conforme a resposta das Pretas.</p>
+                            <ul class="key-ideas">
+                                <li>Controle central sobre a casa <span class="chess-move">d5</span>.</li>
+                                <li>Desenvolvimento natural com <span class="chess-move">Bc4</span> e <span class="chess-move">d3</span> ou <span class="chess-move">f4</span>.</li>
+                                <li>Evita linhas simétricas passivas.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="card interactive-card white-tab" data-white="gambito" role="button" tabindex="0" aria-pressed="false">
+                        <div class="card-banner">
+                            <span class="banner-piece" aria-hidden="true">♖ ♕</span>
+                            <span class="banner-label">Ruptura Central Imediata</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <div class="tab-top">
+                                    <h3>Gambito Viena</h3>
+                                    <button type="button" class="direct-board-btn" data-jump-opening="gambitoViena" data-jump-step="5">Ver no tabuleiro ↗</button>
+                                </div>
+                                <span class="pgn-tag">1.e4 e5 2.Cc3 Cf6 3.f4</span>
+                            </div>
+                            <p>Uma versão aprimorada do Gambito do Rei: como <span class="chess-move">Cc3</span> já impede <span class="chess-move">Dh4+</span> (um xeque cedo com a dama na diagonal aberta do rei), as Brancas desafiam imediatamente o peão de <span class="chess-move">e5</span>. Se as Pretas aceitarem (<span class="chess-move">3.exf4</span>), as Brancas ganham o centro com <span class="chess-move">e5</span> e <span class="chess-move">d4</span>.</p>
+                            <ul class="key-ideas">
+                                <li>Abertura da coluna <span class="chess-move">f</span> para a torre após o roque curto.</li>
+                                <li>Avanço <span class="chess-move">e5</span> expulsando o cavalo de <span class="chess-move">f6</span>.</li>
+                                <li>Ataque direto ao ponto fraco de <span class="chess-move">f7</span>.</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+
+                <div id="whiteDetail" class="philosophy-detail-panel" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <!-- DE PRETAS: SICILIANA DRAGÃO ACELERADO & NAJDORF -->
+        <section id="pretas" class="section bg-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">Contra-Ataque Assimétrico — Clique no card para ver a análise ou no botão para ir ao tabuleiro</span>
+                    <h2>Repertório de Pretas: Defesa Siciliana</h2>
+                </div>
+                <div class="cards-grid">
+                    <article class="card interactive-card black-tab active" data-black="dragao" role="button" tabindex="0" aria-pressed="true">
+                        <div class="card-banner">
+                            <span class="banner-piece" aria-hidden="true">♝ ♞</span>
+                            <span class="banner-label">Pressão na Grande Diagonal</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <div class="tab-top">
+                                    <h3>Siciliana Dragão Acelerado</h3>
+                                    <button type="button" class="direct-board-btn" data-jump-opening="dragaoAcelerado" data-jump-step="10">Ver no tabuleiro ↗</button>
+                                </div>
+                                <span class="pgn-tag">1.e4 c5 2.Cf3 Cc6 3.d4 cxd4 4.Cxd4 g6</span>
+                            </div>
+                            <p>Nesta linha, as Pretas realizam o <strong>fianchetto de bispo</strong> — uma manobra que posiciona o bispo na lateral do tabuleiro (em <span class="chess-move">g7</span>) para dominar toda a grande diagonal. Ao fazer isso sem jogar <span class="chess-move">d6</span> antes, as Pretas economizam um tempo valioso para avançar <span class="chess-move">d5</span> de uma só vez e evitar ataques diretos contra o seu rei.</p>
+                            <ul class="key-ideas">
+                                <li>Bispo muito ativo na grande diagonal <span class="chess-move">h8-a1</span> graças ao fianchetto.</li>
+                                <li>Avanço central <span class="chess-move">d5</span> em um único movimento, liberando a posição.</li>
+                                <li>Pressão constante sobre a ala da dama e o cavalo de <span class="chess-move">c3</span>.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="card interactive-card black-tab" data-black="najdorf" role="button" tabindex="0" aria-pressed="false">
+                        <div class="card-banner">
+                            <span class="banner-piece" aria-hidden="true">♜ ♛</span>
+                            <span class="banner-label">Elasticidade &amp; Contra-Jogo</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <div class="tab-top">
+                                    <h3>Siciliana Najdorf</h3>
+                                    <button type="button" class="direct-board-btn" data-jump-opening="najdorf" data-jump-step="10">Ver no tabuleiro ↗</button>
+                                </div>
+                                <span class="pgn-tag">1.e4 c5 2.Cf3 d6 3.d4 cxd4 4.Cxd4 Cf6 5.Cc3 a6</span>
+                            </div>
+                            <p>O lance preventivo <span class="chess-move">5.a6</span> controla a casa <span class="chess-move">b5</span> contra saltos de cavalo e bispo, preparando a expansão na ala da dama com <span class="chess-move">b5</span> e <span class="chess-move">Bb7</span>, além de manter flexibilidade total no centro com <span class="chess-move">e5</span> ou <span class="chess-move">e6</span>.</p>
+                            <ul class="key-ideas">
+                                <li>Controle de <span class="chess-move">b5</span> e expansão imediata com <span class="chess-move">b5</span>.</li>
+                                <li>Contra-jogo na coluna semiaberta <span class="chess-move">c</span>.</li>
+                                <li>Alta riqueza tática e variedade de planos no meio-jogo.</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+
+                <div id="blackDetail" class="philosophy-detail-panel" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <!-- GRANDES MESTRES NOTÁVEIS -->
+        <section id="galeria" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">Lendas do Tabuleiro — Clique em um mestre para ver como ele joga essas linhas</span>
+                    <h2>Mestres Notáveis do Repertório</h2>
+                </div>
+                <div class="gallery-grid">
+                    <figure class="gallery-item zoom-container gallery-tab active" data-concept="carlsen" role="button" tabindex="0" aria-pressed="true">
+                        <img src="assets/img/karlsen.jpg" alt="Magnus Carlsen">
+                        <figcaption>
+                            <span>Magnus Carlsen</span>
+                            <small>Clique para ler ↓</small>
+                        </figcaption>
+                    </figure>
+                    <figure class="gallery-item zoom-container gallery-tab" data-concept="kasparov" role="button" tabindex="0" aria-pressed="false">
+                        <img src="assets/img/kasparov.jpg" alt="Garry Kasparov">
+                        <figcaption>
+                            <span>Garry Kasparov</span>
+                            <small>Clique para ler ↓</small>
+                        </figcaption>
+                    </figure>
+                    <figure class="gallery-item zoom-container gallery-tab" data-concept="fischer" role="button" tabindex="0" aria-pressed="false">
+                        <img src="assets/img/fischer.jpg" alt="Bobby Fischer">
+                        <figcaption>
+                            <span>Bobby Fischer</span>
+                            <small>Clique para ler ↓</small>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div id="conceptDetail" class="philosophy-detail-panel" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <!-- EXPLORADOR INTERATIVO EM JAVASCRIPT COM MOVIMENTAÇÃO FLUIDA E SETAS TÁTICAS -->
+        <section id="explorador" class="section bg-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">Prática Interativa com Setas Táticas</span>
+                    <h2>Explorador de Lances de Livro</h2>
+                </div>
+                <p class="section-desc">Selecione uma abertura abaixo, use os botões (ou as teclas <span class="chess-move">←</span> e <span class="chess-move">→</span> do teclado) ou clique em qualquer card explicativo acima para acompanhar a movimentação das peças e as setas de controle:</p>
+
+                <div class="explorer-layout">
+                    <div class="explorer-controls">
+                        <div class="opening-selector" role="group" aria-label="Selecionar abertura">
+                            <button type="button" class="op-btn active" data-opening="viena">Abertura Viena</button>
+                            <button type="button" class="op-btn" data-opening="gambitoViena">Gambito Viena</button>
+                            <button type="button" class="op-btn" data-opening="dragaoAcelerado">Dragão Acelerado</button>
+                            <button type="button" class="op-btn" data-opening="najdorf">Siciliana Najdorf</button>
+                        </div>
+
+                        <div class="move-info-card">
+                            <div class="move-card-top">
+                                <h3 id="openingTitle">Abertura Viena</h3>
+                                <span class="step-counter" id="stepCounter">Jogada 0 / 12</span>
+                            </div>
+                            <p class="pgn-display" id="pgnDisplay">1. e4 e5 2. Cc3 Cf6 3. Bc4</p>
+                            <div class="progress-track" aria-hidden="true">
+                                <div class="progress-fill" id="progressFill"></div>
+                            </div>
+                            <p class="move-comment" id="moveComment" aria-live="polite">Posição inicial. Clique em "Próximo Lance" para acompanhar a sequência teórica.</p>
+                            
+                            <div class="step-buttons">
+                                <button type="button" id="prevMove" class="btn btn-secondary">← Anterior</button>
+                                <button type="button" id="nextMove" class="btn btn-primary">Próximo Lance →</button>
+                                <button type="button" id="flipBoard" class="btn btn-outline">⇅ Inverter Lado</button>
+                                <button type="button" id="resetBoard" class="btn btn-outline">Reiniciar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="board-wrapper">
+                        <div class="board-stage">
+                            <div id="chessBoard" class="chess-board" role="region" aria-label="Tabuleiro de Xadrez Interativo"></div>
+                            <div id="pieceAnimationLayer" class="piece-animation-layer" aria-hidden="true"></div>
+                            <svg id="arrowLayer" class="arrow-layer" viewBox="0 0 800 800" aria-hidden="true"></svg>
+                        </div>
+                        <div class="arrow-legend" aria-label="Legenda das setas táticas">
+                            <span><i class="dot dot-orange"></i> Controle central</span>
+                            <span><i class="dot dot-red"></i> Ameaça / Pressão</span>
+                            <span><i class="dot dot-green"></i> Proteção / Ruptura</span>
+                            <span><i class="dot dot-blue"></i> Plano / Diagonal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Projeto Final • Bruno Venturelli • Estudo Teórico de Xadrez (Viena &amp; Defesa Siciliana)</p>
+            <p>2027</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

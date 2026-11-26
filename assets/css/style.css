@@ -1,0 +1,957 @@
+:root {
+    --bg-main: #262421;
+    --bg-alt: #302e2b;
+    --card-bg: #21201d;
+    --text-main: #ffffff;
+    --text-muted: #bababa;
+    --accent: #81b64c;
+    --accent-hover: #95cc5c;
+    --accent-shadow: #5d8a32;
+    --border: #3d3b37;
+    --sq-light: #ebecd0;
+    --sq-dark: #739552;
+    --highlight-sq: rgba(245, 246, 130, 0.55);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Newsreader', 'Source Serif 4', Georgia, serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.7;
+    font-size: 1.05rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    width: 90%;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+/* Acessibilidade: Skip Link e Foco Visível */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 1rem;
+    background: var(--accent);
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0.6rem 1.1rem;
+    border-radius: 6px;
+    z-index: 200;
+    text-decoration: none;
+    transition: top 0.2s;
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* Notação Algébrica Semântica */
+.chess-move {
+    font-weight: 600;
+    font-style: italic;
+    color: var(--text-main);
+}
+
+.badge .chess-move,
+.move-pill .chess-move {
+    color: inherit;
+}
+
+/* Efeito Zoom nas Imagens com enquadramento seguro no topo */
+.zoom-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.zoom-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+}
+
+.zoom-container:hover img {
+    transform: scale(1.08);
+    filter: brightness(1.06);
+}
+
+/* Header */
+.header {
+    background-color: rgba(33, 32, 29, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.1rem 0;
+}
+
+.logo {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--text-main);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+}
+
+.logo span {
+    color: var(--accent);
+    font-style: italic;
+}
+
+.nav {
+    display: flex;
+    gap: 1.75rem;
+}
+
+.nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.25s;
+}
+
+.nav a:hover {
+    color: var(--accent);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-main);
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+/* Hero */
+.hero {
+    padding: 5rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.3rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(129, 182, 76, 0.16);
+    color: var(--accent);
+    border: 1px solid rgba(129, 182, 76, 0.4);
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+}
+
+.hero-text h1 {
+    font-size: 3.1rem;
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+}
+
+.hero-text h1 span {
+    color: var(--accent);
+    font-style: italic;
+}
+
+.hero-text p {
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.hero-figure {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.hero-image-card {
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    height: 350px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+.hero-photo-caption {
+    font-size: 0.88rem;
+    font-style: italic;
+    color: var(--text-muted);
+    line-height: 1.45;
+    text-align: center;
+    padding: 0 0.5rem;
+}
+
+/* Botões estilo Chess.com */
+.btn {
+    padding: 0.75rem 1.45rem;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 4px 0 var(--accent-shadow);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary:hover:not(:disabled) {
+    background-color: var(--accent-hover);
+    transform: translateY(-1px);
+}
+
+.btn-primary:active:not(:disabled) {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 var(--accent-shadow);
+}
+
+.btn-secondary {
+    background-color: #383632;
+    color: var(--text-main);
+    border: 1px solid var(--border);
+    box-shadow: 0 3px 0 #1b1a18;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: #45423d;
+    border-color: var(--accent);
+    color: #ffffff;
+}
+
+.btn-outline {
+    background: #2b2926;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+}
+
+.btn-outline:hover:not(:disabled) {
+    color: var(--text-main);
+    border-color: var(--accent);
+    background: #33312d;
+}
+
+.btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Seções */
+.section {
+    padding: 5rem 0;
+}
+
+.bg-alt {
+    background-color: var(--bg-alt);
+}
+
+.section-header {
+    margin-bottom: 2rem;
+}
+
+.section-kicker {
+    display: block;
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 0.25rem;
+}
+
+h2 {
+    font-size: 2.15rem;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    border-left: 3px solid var(--accent);
+    padding-left: 0.9rem;
+}
+
+.section-desc {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    max-width: 760px;
+}
+
+.grid-2, .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 2rem;
+}
+
+/* Cards Clicáveis de Filosofia */
+.info-box {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    width: 100%;
+    user-select: none;
+}
+
+.info-box:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.philosophy-tab.active {
+    border-color: var(--accent);
+    background: linear-gradient(145deg, #2b3024, var(--card-bg));
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+}
+
+.tab-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.click-hint {
+    font-size: 0.88rem;
+    color: var(--accent);
+    font-style: italic;
+    white-space: nowrap;
+    padding: 0.15rem 0.55rem;
+    border-radius: 6px;
+    background: rgba(129, 182, 76, 0.15);
+    transition: background 0.2s;
+}
+
+.info-box:hover .click-hint {
+    background: rgba(129, 182, 76, 0.28);
+}
+
+/* Botão direto para o tabuleiro nos cards de abertura */
+.direct-board-btn {
+    background: rgba(129, 182, 76, 0.16);
+    color: var(--accent);
+    border: 1px solid rgba(129, 182, 76, 0.45);
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-style: italic;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.direct-board-btn:hover {
+    background: var(--accent);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Painel Detalhado Interativo */
+.philosophy-detail-panel {
+    margin-top: 2rem;
+    background-color: var(--card-bg);
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+    padding: 2.25rem;
+    scroll-margin-top: 90px;
+    animation: fadeInPanel 0.35s ease;
+}
+
+@keyframes fadeInPanel {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.detail-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.detail-header span {
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.detail-header h3 {
+    font-size: 1.65rem;
+    font-weight: 500;
+    color: var(--text-main);
+    margin-top: 0.25rem;
+}
+
+.move-breakdown-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+}
+
+/* Cards Explicativos Clicáveis que levam ao Tabuleiro com Setas */
+.move-step-box {
+    background-color: var(--bg-main);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.4rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.move-step-box:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+}
+
+.step-box-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.65rem;
+}
+
+.move-step-box .move-pill {
+    display: inline-block;
+    background: rgba(129, 182, 76, 0.16);
+    color: var(--accent);
+    padding: 0.2rem 0.65rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.board-jump-badge {
+    font-size: 0.82rem;
+    color: var(--accent);
+    font-style: italic;
+    border: 1px solid rgba(129, 182, 76, 0.4);
+    padding: 0.15rem 0.55rem;
+    border-radius: 999px;
+    transition: all 0.2s;
+}
+
+.move-step-box:hover .board-jump-badge {
+    background-color: var(--accent);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.move-step-box h4 {
+    font-size: 1.12rem;
+    font-weight: 500;
+    color: var(--text-main);
+    margin-bottom: 0.45rem;
+}
+
+.move-step-box p {
+    font-size: 0.96rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* Cards Interativos de Abertura */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.interactive-card {
+    cursor: pointer;
+    user-select: none;
+}
+
+.interactive-card.active {
+    border-color: var(--accent);
+    background: linear-gradient(160deg, #2b3024, var(--card-bg));
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.card-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.15rem 1.75rem;
+    background: linear-gradient(90deg, rgba(129, 182, 76, 0.16), rgba(33, 32, 29, 0.85));
+    border-bottom: 1px solid var(--border);
+}
+
+.banner-piece {
+    font-size: 1.65rem;
+    color: var(--accent);
+    letter-spacing: 0.25rem;
+    line-height: 1;
+}
+
+.banner-label {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+.card-body {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card-top {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.card h3, .info-box h3 {
+    color: var(--text-main);
+    font-size: 1.35rem;
+    font-weight: 500;
+}
+
+.pgn-tag {
+    display: inline-block;
+    align-self: flex-start;
+    background: var(--bg-main);
+    color: var(--accent);
+    padding: 0.25rem 0.7rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-style: italic;
+    border: 1px solid var(--border);
+}
+
+.card p, .info-box p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 1.15rem;
+}
+
+.info-box p {
+    margin-bottom: 0;
+}
+
+.key-ideas {
+    padding-left: 1.2rem;
+    color: var(--text-main);
+    font-size: 0.96rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    margin-top: auto;
+}
+
+/* Galeria de Grandes Mestres */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    height: 270px;
+    border-radius: 12px;
+    border: 2px solid var(--border);
+    cursor: pointer;
+    user-select: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover, .gallery-item.active {
+    border-color: var(--accent);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+}
+
+.gallery-item figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.15rem 1.25rem;
+    background: linear-gradient(to top, rgba(26, 25, 23, 0.96), transparent);
+    color: var(--text-main);
+    font-style: italic;
+    font-size: 1.08rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gallery-item figcaption small {
+    color: var(--accent);
+    font-size: 0.85rem;
+    background: rgba(33, 32, 29, 0.88);
+    padding: 0.15rem 0.55rem;
+    border-radius: 6px;
+    border: 1px solid rgba(129, 182, 76, 0.4);
+}
+
+/* Explorador de Tabuleiro */
+#explorador {
+    scroll-margin-top: 70px;
+}
+
+.explorer-layout {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.opening-selector {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.op-btn {
+    padding: 0.8rem;
+    background: var(--card-bg);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.op-btn.active, .op-btn:hover {
+    background: rgba(129, 182, 76, 0.18);
+    color: #ffffff;
+    border-color: var(--accent);
+}
+
+.move-info-card {
+    background: var(--card-bg);
+    padding: 1.75rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.move-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.6rem;
+    gap: 0.5rem;
+}
+
+.move-info-card h3 {
+    color: var(--accent);
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.step-counter {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.pgn-display {
+    background: var(--bg-main);
+    padding: 0.65rem 0.9rem;
+    border-radius: 8px;
+    color: var(--text-main);
+    margin-bottom: 0.9rem;
+    font-size: 0.95rem;
+    font-style: italic;
+    border: 1px solid var(--border);
+}
+
+.progress-track {
+    width: 100%;
+    height: 5px;
+    background: var(--bg-main);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.move-comment {
+    color: var(--text-muted);
+    min-height: 4.8rem;
+    margin-bottom: 1.35rem;
+    font-size: 1.02rem;
+}
+
+.step-buttons {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+/* Tabuleiro 8x8 Clássico Chess.com (Creme & Verde-Oliva), Animação e Setas SVG */
+.board-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.board-stage {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    aspect-ratio: 1 / 1;
+    border: 6px solid #1b1a18;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+}
+
+.chess-board {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    width: 100%;
+    height: 100%;
+}
+
+.piece-animation-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 8;
+}
+
+.flying-piece {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12.5%;
+    height: 12.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    font-size: clamp(1.5rem, 3.8vw, 2.25rem);
+    color: #1a1917;
+    filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.65));
+    will-change: transform;
+}
+
+.arrow-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+    transition: opacity 0.22s ease;
+}
+
+.square {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    line-height: 1;
+    font-size: clamp(1.5rem, 3.8vw, 2.25rem);
+    user-select: none;
+    position: relative;
+}
+
+.square.light {
+    background-color: var(--sq-light);
+    color: #1a1917;
+}
+
+.square.dark {
+    background-color: var(--sq-dark);
+    color: #1a1917;
+}
+
+.square.highlight::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--highlight-sq);
+    pointer-events: none;
+}
+
+.coord-rank,
+.coord-file {
+    position: absolute;
+    font-size: 0.62rem;
+    font-weight: 700;
+    line-height: 1;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.coord-rank {
+    top: 3px;
+    left: 4px;
+}
+
+.coord-file {
+    bottom: 2px;
+    right: 4px;
+}
+
+.square.light .coord-rank,
+.square.light .coord-file {
+    color: #739552;
+}
+
+.square.dark .coord-rank,
+.square.dark .coord-file {
+    color: #ebecd0;
+}
+
+/* Legenda das Setas Táticas */
+.arrow-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.9rem 1.25rem;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--text-muted);
+    max-width: 430px;
+}
+
+.arrow-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot-orange { background-color: #f59e0b; }
+.dot-red { background-color: #ef4444; }
+.dot-green { background-color: #22c55e; }
+.dot-blue { background-color: #38bdf8; }
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 2.25rem 0;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+/* Responsividade Mobile */
+@media (max-width: 880px) {
+    .hero-grid, .explorer-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-text h1 {
+        font-size: 2.35rem;
+    }
+
+    .hero-image-card {
+        height: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-alt);
+        padding: 1rem 5%;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .tab-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .logo {
+        font-size: 1.12rem;
+    }
+}
